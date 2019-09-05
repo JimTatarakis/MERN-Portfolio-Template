@@ -22,7 +22,10 @@
     "express.js",
     "node.js",
     "react.js"
-  ],
+  ],  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimTatarakis/MERN-Portfolio-Template.git"
+  },
   "author": "jim.tatarakis",
   "license": "MIT",
   "dependencies": {
