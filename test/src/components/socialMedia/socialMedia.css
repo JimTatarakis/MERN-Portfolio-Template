@@ -1,0 +1,14 @@
+#socialMediaWrapper {
+    margin: 0.25rem 0.25rem;
+    justify-content: center;
+    color: rgb(56,56,56);
+}
+#followMeParagraph {
+    font-size: 1.5rem;
+    font-family: 'Nunito Sans';
+    margin-top: 0.3rem;
+}
+.socialMediaIcon {
+    color: rgb(99,105,109);
+    margin: 0.5rem 0.5rem;
+}
