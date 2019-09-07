@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
         return (
             <React.Fragment>
                 <div id="footerWrapper">
-                        <div className="justify-conent-right" id="copyRightContainer">
+                        <div id="copyRightContainer">
                             <p className="text-center">Jim Tatarakis &copy; 2019</p>
                         </div>
                 </div>

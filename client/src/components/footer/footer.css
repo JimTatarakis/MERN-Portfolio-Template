@@ -7,12 +7,6 @@
     justify-content: center;
     color: azure;
 }
-#followMeParagraph {
-    font-size: 1.5rem;
-    font-family: 'Nunito Sans';
-    margin-top: 0.3rem;
-}
-.socialMediaIcon {
-    color: azure;
-    margin: 0.2rem 0.2rem;
+#copyRightContainer {
+    margin-top: 0.5rem;
 }
