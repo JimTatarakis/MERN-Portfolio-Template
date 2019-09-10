@@ -3,22 +3,18 @@
 const express = require('express');
 const session = require('express-session');
 const mongoose = require("mongoose");
-const express = require('express');
+const dbConnection = require('./database/database');
+const MongoStore = require('connect-mongo')(session);
 const morgan = require('morgan');
 const passport = require('./passport');
-const flash = require('connect-flash');
-
-// Dotenv: Set up
-// =============================================================
-require("dotenv").config();
 
 // Express: App set up
 // =============================================================
 const app = express();
 
-// Passport: Config
+// Dotenv: Set up
 // =============================================================
-require('./config/passport')(passport);
+require("dotenv").config();
 
 // Express body parser
 // =============================================================
@@ -27,6 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 // Morgan: Middleware
 // =============================================================
 app.use(morgan('dev'));
+
+// Passport: Config
+// =============================================================
+require('./config/passport')(passport);
 
 // Session: Config
 // =============================================================
@@ -38,45 +38,21 @@ app.use(
    session({sessionConfig})
 );
 
-// App: Static Assets
-// =============================================================
-if (process.env.NODE_ENV === "production") {
-   app.use(express.static("client/build"));
-};
-
 // Passport: Middleware
 // =============================================================
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Connect flash
-// =============================================================
-app.use(flash());
-
-// Global variables
-// =============================================================
-app.use(function (req, res, next) {
-   res.locals.success_msg = req.flash('success_msg');
-   res.locals.error_msg = req.flash('error_msg');
-   res.locals.error = req.flash('error');
-   next();
-});
-
-// Mongoose: Config
-// =============================================================
-const mongodb = require('./config/config').MONGODB_URI;
-
-// Mongoose: Connect to MongoDB
-// =============================================================
-mongoose
-   .connect(mongodb, { useNewUrlParser: true, useFindAndModify: false })
-   .then(() => console.log('MongoDB connected...'))
-   .catch(err => console.log(err));
-
 // Server: Requires Routes
 // =============================================================
 const routes = require("./routes");
 app.use(routes);
+
+// App: Static Assets for Production
+// =============================================================
+if (process.env.NODE_ENV === "production") {
+   app.use(express.static("client/build"));
+};
 
 // Server: Define Port
 // =============================================================

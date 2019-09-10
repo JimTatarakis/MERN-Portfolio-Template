@@ -2,18 +2,15 @@
 // =============================================================
 const router = require("express").Router();
 const controller = require("../../controllers/controller");
+const axios = require("axios");
 
 // Project Routes
 // =============================================================
 // Matches with "/api/projects"
-router.route("/projects")
+router
+    .route("/projects")
     .get(controller.findAll)
     .post(controller.create);
-
-// User Routes
-// =============================================================
-router.route("/user")
-    .get(controller.userFindAll)
 
 // Matches with "/api/project/:id"
 // =============================================================

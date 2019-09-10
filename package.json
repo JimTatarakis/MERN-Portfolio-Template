@@ -22,15 +22,18 @@
     "express.js",
     "node.js",
     "react.js"
-  ],  "repository": {
+  ],
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/JimTatarakis/MERN-Portfolio-Template.git"
   },
   "author": "jim.tatarakis",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.0.0",
     "dotenv": "^8.1.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
