@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
 mongoose.promise = Promise
 
-// Mongoose/MongoDB: Generates new Schema for Articles
+// Mongoose/MongoDB: Generates new Schema for Users
 // =============================================================
 const userSchema = new Schema({
     username: { type: String, unique: true, required: true },

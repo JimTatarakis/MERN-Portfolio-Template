@@ -1,8 +1,8 @@
 // Dependencies
 // =============================================================
 const express = require('express');
-const user = require('../models/user');
-const passport = require('../passport');
+const user = require('../../models/user');
+const passport = require('../../passport');
 
 module.exports = function (app) {
 

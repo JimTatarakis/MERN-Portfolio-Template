@@ -11,7 +11,7 @@ require("dotenv").config();
 
 // Mongoose: Config
 // =============================================================
-const mongodb = require('./config/config').MONGODB_URI;
+const mongodb = require('../config/config').MONGODB_URI;
 
 // Mongoose: Connect to MongoDB
 // =============================================================

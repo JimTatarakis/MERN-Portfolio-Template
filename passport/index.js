@@ -1,8 +1,8 @@
 // Dependencies
 // =============================================================
-const passport = require('passport')
-const LocalStrategy = require('./localStrategy')
-const user = require('../models/user')
+const passport = require('passport');
+const LocalStrategy = require('./local-strategy');
+const user = require('../models/user');
 
 // Passport: Serialize User on login
 // =============================================================
